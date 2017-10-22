@@ -74,16 +74,6 @@ sudo apt-get install -y gnome-tweak-tool
 echo "Installing gnome-music"
 sudo apt install -y gnome-music
 
-echo "Installing numix-gtk-theme"
-sudo apt-get install -y numix-gtk-theme
-sudo gsettings set org.gnome.desktop.interface gtk-theme 
-sudo gsettings set org.gnome.desktop.interface gtk-theme "Numix"
-sudo gsettings set org.gnome.desktop.wm.preferences theme "Numix"
-
-echo "Installing papirus-icon-theme"
-sudo apt install -y papirus-icon-theme
-sudo gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
-
 echo "Installing deluge" 
 sudo apt install -y deluge
 
@@ -93,11 +83,28 @@ sudo apt-get install -y thunderbird
 echo "Installing youtube-dl"
 sudo apt install -y youtube-dl
 
+echo "Installing dc++"
+sudo apt-get install -y eiskaltdcpp
+
+echo "Installing numix-gtk-theme"
+sudo apt-get install -y numix-gtk-theme
+gsettings set org.gnome.desktop.interface gtk-theme "Numix"
+
+echo "Installing papirus-icon-theme"
+sudo apt install -y papirus-icon-theme
+sudo gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
+
+echo "installing sublime text"
+sudo apt-get install -y sublime-text-installer
+
 echo "Removing default games"
 sudo apt-get purge gnome-games-common gbrainy
 
 echo "autoclean"
 sudo apt-get autoclean
+
+echo "autoremove"
+sudo apt-get autoremove
 
 
 
