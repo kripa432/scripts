@@ -76,13 +76,13 @@ sudo apt install -y gnome-music
 
 echo "Installing numix-gtk-theme"
 sudo apt-get install -y numix-gtk-theme
-gsettings set org.gnome.desktop.interface gtk-theme 
-gsettings set org.gnome.desktop.interface gtk-theme "Numix"
-gsettings set org.gnome.desktop.wm.preferences theme "Numix"
+sudo gsettings set org.gnome.desktop.interface gtk-theme 
+sudo gsettings set org.gnome.desktop.interface gtk-theme "Numix"
+sudo gsettings set org.gnome.desktop.wm.preferences theme "Numix"
 
 echo "Installing papirus-icon-theme"
 sudo apt install -y papirus-icon-theme
-gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
+sudo gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
 
 echo "Installing deluge" 
 sudo apt install -y deluge
