@@ -54,9 +54,6 @@ rm google-chrome-stable_current_amd64.deb
 #echo "Installing virtualbox"
 #sudo apt-get install -y virtualbox 
 
-echo "Installing ubuntu-restricted-extras"
-sudo apt-get install -y ubuntu-restricted-extras
-
 echo "Installing gcc"
 sudo apt-get install -y gcc
 
@@ -72,10 +69,6 @@ sudo apt-get install -y default-jdk
 echo "Installing apache2"
 sudo apt-get install -y apache2
 sudo systemctl disable apache2
-
-echo "Installing my-sql"
-sudo apt-get install -y mysql-server
-sudo systemctl disable mysql
 
 echo "Installing php"
 sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql
@@ -117,6 +110,13 @@ sudo apt-get -y install curl
 
 echo "Installing Preload"
 sudo apt-get -y install preload
+
+echo "Installing my-sql"
+sudo apt-get install -y mysql-server
+sudo systemctl disable mysql
+
+echo "Installing ubuntu-restricted-extras"
+sudo apt-get install -y ubuntu-restricted-extras
 
 echo "Removing default games"
 sudo apt-get purge gnome-games-common gbrainy
