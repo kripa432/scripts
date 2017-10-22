@@ -20,6 +20,12 @@ cd ~
 echo "Installing vim"
 sudo apt-get install -y vim
 
+#intalling color scheme
+mkdir ~/.vim
+mkdir ~/.vim/colors/
+wget -O ~/.vim/colors/monokai.vim  https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
+
+
 #setting .vimrc
 wget https://raw.githubusercontent.com/kripa432/scripts/master/.vimrc
 
@@ -101,15 +107,10 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize
 
 echo "Installing papirus-icon-theme"
 sudo apt install -y papirus-icon-theme
-sudo gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
+sudo gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 
 echo "installing sublime text"
 sudo apt-get install -y sublime-text-installer
-#intalling color scheme
-mkdir ~/.vim
-mkdir ~/.vim/colors/
-wget -O ~/.vim/colors/monokai.vim  https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
-
 
 echo "Install curl"
 sudo apt-get -y install curl
