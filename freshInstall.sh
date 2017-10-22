@@ -14,13 +14,19 @@ sudo apt-get update
 echo "upgrade"
 sudo apt-get upgrade
 
+echo "cd ~"
+cd ~
+
 echo "Installing vim"
 sudo apt-get install -y vim
 
+#setting .vimrc
+wget https://raw.githubusercontent.com/kripa432/scripts/master/.vimrc
+
 echo "Installing git"
 sudo apt-get install -y git
-#git config --global user.name "Kripa Shanker"
-#git config --global user.email "iamkripashanker@gmail.com"
+git config --global user.name "Kripa Shanker"
+git config --global user.email "iamkripashanker@gmail.com"
 
 echo "Installing vlc"
 sudo apt-get install -y vlc
@@ -90,12 +96,26 @@ echo "Installing numix-gtk-theme"
 sudo apt-get install -y numix-gtk-theme
 gsettings set org.gnome.desktop.interface gtk-theme "Numix"
 
+echo "setting minimize , maximize button to right"
+gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+
 echo "Installing papirus-icon-theme"
 sudo apt install -y papirus-icon-theme
 sudo gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
 
 echo "installing sublime text"
 sudo apt-get install -y sublime-text-installer
+#intalling color scheme
+mkdir ~/.vim
+mkdir ~/.vim/colors/
+wget -O ~/.vim/colors/monokai.vim  https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
+
+
+echo "Install curl"
+sudo apt-get -y install curl
+
+echo "Installing Preload"
+sudo apt-get -y install preload
 
 echo "Removing default games"
 sudo apt-get purge gnome-games-common gbrainy
