@@ -1,4 +1,3 @@
-execute pathogen#infect()
 set path+=**
 set wildmenu
 
