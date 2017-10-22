@@ -1,0 +1,103 @@
+echo "Adding repository papirus-icon-theme"
+sudo add-apt-repository -y ppa:papirus/papirus
+
+echo "Adding Sublime text"
+sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+
+echo "Adding google-chrome-repository"
+sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
+sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+echo "update..."
+sudo apt-get update
+
+echo "upgrade"
+sudo apt-get upgrade
+
+echo "Installing vim"
+sudo apt-get install -y vim
+
+echo "Installing git"
+sudo apt-get install -y git
+#git config --global user.name "Kripa Shanker"
+#git config --global user.email "iamkripashanker@gmail.com"
+
+echo "Installing vlc"
+sudo apt-get install -y vlc
+
+echo "Installing virtual-box"
+sudo apt-get install -y 
+
+echo "Installing tmux"
+sudo apt-get install -y tmux
+
+echo "Installing gimp"
+sudo apt-get install -y gimp
+
+echo "Installing google chrome "
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+
+echo "Installing virtualbox"
+sudo apt-get install -y virtualbox 
+
+echo "Installing ubuntu-restricted-extras"
+sudo apt-get install -y ubuntu-restricted-extras
+
+echo "Installing gcc"
+sudo apt-get install -y gcc
+
+echo "Installing g++"
+sudo apt-get install -y g++
+
+echo "Installing file zilla"
+sudo apt-get install -y filezilla
+
+echo "Installing JDK"
+sudo apt-get install -y default-jdk
+
+echo "Installing apache2"
+sudo apt-get install -y apache2
+sudo systemctl disable apache2
+
+echo "Installing my-sql"
+sudo apt-get install -y mysql-server
+sudo systemctl disable mysql
+
+echo "Installing php"
+sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql
+
+echo "Install gnome-tweak-tool"
+sudo apt-get install -y gnome-tweak-tool
+
+echo "Installing gnome-music"
+sudo apt install -y gnome-music
+
+echo "Installing numix-gtk-theme"
+sudo apt-get install -y numix-gtk-theme
+gsettings set org.gnome.desktop.interface gtk-theme 
+gsettings set org.gnome.desktop.interface gtk-theme "Numix"
+gsettings set org.gnome.desktop.wm.preferences theme "Numix"
+
+echo "Installing papirus-icon-theme"
+sudo apt install -y papirus-icon-theme
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
+
+echo "Installing deluge" 
+sudo apt install -y deluge
+
+echo "Installing thunderbird"
+sudo apt-get install -y thunderbird
+
+echo "Installing youtube-dl"
+sudo apt install -y youtube-dl
+
+echo "Removing default games"
+sudo apt-get purge gnome-games-common gbrainy
+
+echo "autoclean"
+sudo apt-get autoclean
+
+
+
