@@ -109,9 +109,9 @@ sudo apt-get -y install curl
 echo "Installing Preload"
 sudo apt-get -y install preload
 
-echo "Installing my-sql"
-sudo apt-get install -y mysql-server
-sudo systemctl disable mysql
+#echo "Installing my-sql"
+#sudo apt-get install -y mysql-server
+#sudo systemctl disable mysql
 
 echo "Installing ubuntu-restricted-extras"
 sudo apt-get install -y ubuntu-restricted-extras
