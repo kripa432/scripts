@@ -6,13 +6,13 @@ sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 
 echo "Adding google-chrome-repository"
 sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
-sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub
+sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
 echo "update..."
 sudo apt-get update
 
 echo "upgrade"
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 
 echo "cd ~"
 cd ~
@@ -38,7 +38,7 @@ echo "Installing vlc"
 sudo apt-get install -y vlc
 
 echo "Installing virtual-box"
-sudo apt-get install -y 
+sudo apt-get install -y
 
 echo "Installing tmux"
 sudo apt-get install -y tmux
@@ -47,10 +47,13 @@ echo "Installing gimp"
 sudo apt-get install -y gimp
 
 echo "Installing google chrome "
-sudo apt-get install google-chrome-stable
+sudo apt-get install -y google-chrome-stable
+
+echo "Installing google"
+sudo apt-get install -y  chrome-gnome-shell
 
 #echo "Installing virtualbox"
-#sudo apt-get install -y virtualbox 
+#sudo apt-get install -y virtualbox
 
 echo "Installing gcc"
 sudo apt-get install -y gcc
@@ -77,7 +80,10 @@ sudo apt-get install -y gnome-tweak-tool
 echo "Installing gnome-music"
 sudo apt install -y gnome-music
 
-echo "Installing deluge" 
+echo "Installing gnome-boxes"
+sudo apt-get install -y gnome-boxes
+
+echo "Installing deluge"
 sudo apt install -y deluge
 
 echo "Installing thunderbird"
@@ -98,7 +104,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize
 
 echo "Installing papirus-icon-theme"
 sudo apt install -y papirus-icon-theme
-sudo gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 
 echo "installing sublime text"
 sudo apt-get install -y sublime-text-installer
