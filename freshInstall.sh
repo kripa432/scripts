@@ -31,14 +31,14 @@ wget https://raw.githubusercontent.com/kripa432/scripts/master/.vimrc
 
 echo "Installing git"
 sudo apt-get install -y git
-git config --global user.name "Kripa Shanker"
-git config --global user.email "iamkripashanker@gmail.com"
+#git config --global user.name "Kripa Shanker"
+#git config --global user.email "iamkripashanker@gmail.com"
 
 echo "Installing vlc"
 sudo apt-get install -y vlc
 
-echo "Installing virtual-box"
-sudo apt-get install -y
+#echo "Installing virtual-box"
+#sudo apt-get install -y virtualbox
 
 echo "Installing tmux"
 sudo apt-get install -y tmux
