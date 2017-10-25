@@ -27,7 +27,7 @@ wget -O ~/.vim/colors/monokai.vim  https://raw.githubusercontent.com/sickill/vim
 
 
 #setting .vimrc
-wget https://raw.githubusercontent.com/kripa432/scripts/master/.vimrc
+wget -O ~/.vimrc https://raw.githubusercontent.com/kripa432/scripts/master/.vimrc
 
 echo "Installing git"
 sudo apt-get install -y git
