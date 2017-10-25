@@ -52,6 +52,9 @@ sudo apt-get install -y google-chrome-stable
 echo "Installing google"
 sudo apt-get install -y  chrome-gnome-shell
 
+echo "Installing net-tools"
+sudo apt-get install -y net-tools
+
 #echo "Installing virtualbox"
 #sudo apt-get install -y virtualbox
 
