@@ -1,7 +1,9 @@
 set path+=**
 set wildmenu
 
-
+inoremap {<cr> {<cr>}<c-o><s-o>
+inoremap [<cr> [<cr>]<c-o><s-o>
+inoremap (<cr> (<cr>)<c-o><s-o>
 
 set shell=/bin/bash
 runtime macros/matchit.vim
