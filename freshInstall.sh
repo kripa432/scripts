@@ -1,3 +1,6 @@
+#sudo sed -i 's%archive.ubuntu.com%ftp.iitm.ac.in%' /etc/apt/sources.list
+sudo sed -i 's%in.archive.ubuntu.com%ftp.iitm.ac.in%' /etc/apt/sources.list
+
 echo "Adding repository papirus-icon-theme"
 sudo add-apt-repository -y ppa:papirus/papirus
 
