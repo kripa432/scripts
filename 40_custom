@@ -3,7 +3,7 @@ exec tail -n +3 $0
 # This file provides an easy way to add custom menu entries.  Simply type the
 # menu entries you want to add after this comment.  Be careful not to change
 # the 'exec tail' line above.
-menuentry "kali-linux-1.1.0a-amd64" {
+menuentry "kali-linux-2.0-amd64" {
     set isofile="/theCoder/iso/kali-linux-2.0-amd64.iso"
     echo "setting loopback..."
     loopback loop (hd0,3)$isofile
@@ -13,12 +13,12 @@ menuentry "kali-linux-1.1.0a-amd64" {
     initrd (loop)/live/initrd.img
 }
 
-menuentry "ubuntu-16.10-amd64.iso" {
+menuentry "ubuntu-17.04-amd64.iso" {
     set isofile="/kripa432/iso/ubuntu-17.04-desktop-amd64.iso"
     echo "setting loopback..."
     loopback loop (hd0,7)$isofile
     echo "loading linux kernel..."
-    linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=$isofile noprompt noeject
+    linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=$isofile noprompt noeject quiet splash toram
     echo "loading initial ramdisk..."
     initrd (loop)/casper/initrd.lz
 }
