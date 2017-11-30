@@ -1,1 +1,1 @@
-youtube-dl --write-sub --write-auto-sub --embed-subs --sleep-interval 2 -i -o '%(playlist)s/%(title) - s%(resolution)s.%(ext)s' https://www.youtube.com/playlist?list=PL49CF3715CB9EF31D
+youtube-dl --write-sub --write-auto-sub --embed-subs --sleep-interval 20 -f mp4 -i -o '%(playlist)s/%(title) - s%(resolution)s.%(ext)s' https://www.youtube.com/playlist?list=PL49CF3715CB9EF31D
