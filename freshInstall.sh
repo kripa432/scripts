@@ -118,6 +118,12 @@ sudo apt-get install -y sublime-text-installer
 echo "Install curl"
 sudo apt-get -y install curl
 
+
+echo "Install Samba"
+sudo apt-get -y install samba
+
+wget -o /etc/samba/smb.conf https://raw.githubusercontent.com/kripa432/scripts/master/smb.conf
+
 echo "Installing Preload"
 sudo apt-get -y install preload
 
