@@ -124,6 +124,8 @@ sudo apt-get -y install samba
 
 wget -o /etc/samba/smb.conf https://raw.githubusercontent.com/kripa432/scripts/master/smb.conf
 
+sudo a2enmod userdir
+
 echo "Installing Preload"
 sudo apt-get -y install preload
 
