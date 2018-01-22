@@ -1,1 +1,1 @@
-youtube-dl --external-downloader aria2c --external-downloader-args '-x 4' --write-sub --write-auto-sub --embed-subs --sleep-interval 20 -f mp4/flv -i -o '%(playlist_title)s/%(title) - s%(resolution)s.%(ext)s' https://www.youtube.com/playlist?list=PL49CF3715CB9EF31D
+youtube-dl  --sleep-interval 5 -f mp4/flv -i -o '%(playlist_title)s/%(title)s.%(ext)s' https://www.youtube.com/playlist?list=PL49CF3715CB9EF31D
