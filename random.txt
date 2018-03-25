@@ -1,1 +1,2 @@
 youtube-dl  --sleep-interval 5 -f mp4/flv -i -o '%(playlist_title)s/%(title)s.%(ext)s' https://www.youtube.com/playlist?list=PL49CF3715CB9EF31D
+pacmd load-module module-remap-sink sink_name=mono master=$(pacmd list-sinks | grep -m 1 -oP 'name:\s<\K.*(?=>)') channels=2 channel_map=mono,mono
