@@ -122,6 +122,9 @@ sudo apt-get -y install curl
 echo "Install Samba"
 sudo apt-get -y install samba
 
+echo "Install build-essential"
+sudo apt-get install build-essential -y
+
 sudo rm /etc/samba/smb.conf
 
 sudo wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/kripa432/scripts/master/smb.conf
