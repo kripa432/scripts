@@ -77,8 +77,8 @@ echo "Installing apache2"
 sudo apt-get install -y apache2
 sudo systemctl disable apache2
 
-echo "Installing php"
-sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql
+#echo "Installing php"
+#sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql
 
 echo "Install gnome-tweak-tool"
 sudo apt-get install -y gnome-tweak-tool
@@ -149,6 +149,9 @@ sudo apt-get autoclean
 
 echo "autoremove"
 sudo apt-get autoremove
+
+echo "texstudio"
+sudo apt-get -y install texstudio texlive-full
 
 
 
