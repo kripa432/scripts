@@ -1,8 +1,16 @@
 #sudo sed -i 's%archive.ubuntu.com%ftp.iitm.ac.in%' /etc/apt/sources.list
 #sudo sed -i 's%in.archive.ubuntu.com%ftp.iitm.ac.in%' /etc/apt/sources.list
 
-echo "Adding repository papirus-icon-theme"
-sudo add-apt-repository -y ppa:papirus/papirus
+$file=/etc/apt/sources.list.d/papirus-ubuntu-papirus-bionic.list
+if [ -f $FILE ]; then
+  echo "File $FILE exists."
+else
+  echo "File $FILE does not exist." 
+  echo "Adding repository papirus-icon-theme"
+  sudo add-apt-repository -y ppa:papirus/papirus
+fi
+
+
 
 $file=/etc/apt/sources.list.d/google-chrome.list
 if [ -f $FILE ]; then
