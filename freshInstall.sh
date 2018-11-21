@@ -4,9 +4,16 @@
 echo "Adding repository papirus-icon-theme"
 sudo add-apt-repository -y ppa:papirus/papirus
 
-echo "Adding google-chrome-repository"
-sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
-sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+$file=/etc/apt/sources.list.d/google-chrome.list
+if [ -f $FILE ]; then
+  echo "File $FILE exists."
+else
+  echo "File $FILE does not exist." 
+  echo "Adding google-chrome-repository"
+  sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
+  sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+fi
+
 
 echo "update..."
 sudo apt-get update
