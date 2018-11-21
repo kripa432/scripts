@@ -4,9 +4,6 @@
 echo "Adding repository papirus-icon-theme"
 sudo add-apt-repository -y ppa:papirus/papirus
 
-echo "Adding Sublime text"
-sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-
 echo "Adding google-chrome-repository"
 sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
 sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -138,9 +135,6 @@ sudo apt-get -y install preload
 #sudo apt-get install -y mysql-server
 #sudo systemctl disable mysql
 
-echo "Installing ubuntu-restricted-extras"
-sudo apt-get install -y ubuntu-restricted-extras
-
 echo "Removing default games"
 sudo apt-get purge gnome-games-common gbrainy
 
@@ -153,5 +147,6 @@ sudo apt-get autoremove
 echo "texstudio"
 sudo apt-get -y install texstudio texlive-full
 
-
+echo "Installing ubuntu-restricted-extras"
+sudo apt-get install -y ubuntu-restricted-extras
 
