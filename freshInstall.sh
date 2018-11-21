@@ -151,10 +151,10 @@ sudo apt-get -y install preload
 #sudo systemctl disable mysql
 
 echo "Removing default games"
-sudo apt-get purge gnome-games-common gbrainy
+sudo apt-get -y purge gnome-games-common gbrainy
 
 echo "autoclean"
-sudo apt-get autoclean
+sudo apt-get -y autoclean
 
 echo "autoremove"
 sudo apt-get autoremove
