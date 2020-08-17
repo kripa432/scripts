@@ -1,24 +1,20 @@
-set nocp ts=8 sw=8 noet ai cin bs=2 cb=unnamed
-set number ruler wrap autoread showcmd showmode fdm=marker nobackup
-set wildmenu
+set nocompatible 
+set tabstop=4 shiftwidth=4 softtabstop=4 shiftround noexpandtab 
+set autoindent cindent cinoptions=:0
+set backspace=indent,eol,start
+set number ruler wrap 
+set autoread showcmd wildmenu fdm=marker nobackup clipboard=unnamed 
+set incsearch hlsearch
+set pastetoggle=<F2>
 syntax on
 filetype on
-set incsearch
-set hlsearch
-set cindent
-set cino=:0
-set nocompatible
-set backspace=indent,eol,start
-set autoindent
 filetype plugin indent on
-autocmd FileType text setlocal
-set pastetoggle=<F2>
+autocmd BufEnter *.html set filetype=html
+autocmd BufEnter *.md set filetype=markdown
+autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType markdown setlocal expandtab
 map <F7> mzgg=G`z
-map <F8> :w <CR> :!gcc % && ./a.out <CR>
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
-abbr #b /************************************************
-abbr #e ************************************************/
-cs add $CSCOPE_DB
 set background=dark
 set t_Co=256
