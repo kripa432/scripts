@@ -1,155 +1,71 @@
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-"Plugin 'davidhalter/jedi-vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-set nocompatible 
-filetype off
-
 call plug#begin('~/.vim/plugged')
 
-" tex editing
-Plug 'lervag/vimtex'
+	" Autocompletion
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" Static syntax checking
-"Plug 'vim-syntastic/syntastic'
-
-" autocompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" color scheme
-Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'altercation/vim-colors-solarized'
+	" Color scheme
+	Plug 'morhetz/gruvbox'
+	"Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
-syntax enable
-filetype plugin indent on
-set background=dark
-colorscheme gruvbox
-
-" conquer of completion
+" Conquer of completion
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gn  :call CocAction('diagnosticNext')<CR>
+nmap <silent> gp  :call CocAction('diagnosticPrevious')<CR>
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+
+" Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
+" Ctrl-Space to trigger autocompletion
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+" Maker <cr> to select first completion 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" syntastic: static anlysis of source code
-let g:syntastic_mode_map = {
-	\ "mode" : "passive",
-	\ "active_filetypes": [],
-	\ "passive_filetypes": []}
+syntax enable
+filetype plugin indent on
 
+set t_Co=256
+set term=xterm-256color
 
-syntax on
+set background=dark
+colorscheme gruvbox
+
 set tabstop=4 shiftwidth=4 noexpandtab autoindent cindent
 set backspace=indent,eol,start
 set cinoptions=:0
 
 set clipboard=unnamed
 
-set number ruler wrap autoread showcmd showmode foldmethod=marker nobackup
+set number ruler wrap autoread showcmd showmode foldmethod=marker nobackup wildmenu
 
-set wildmenu
-
-set incsearch
-set hlsearch
-set autoindent
-set ignorecase
+set incsearch hlsearch ignorecase
 
 set relativenumber
 
-set t_Co=256
-set term=xterm-256color
-
 set pastetoggle=<F2>
-<<<<<<< HEAD
-syntax on
-filetype plugin indent on
-autocmd BufEnter *.html set filetype=html
-autocmd BufEnter *.md set filetype=markdown
-autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType markdown setlocal expandtab
-=======
->>>>>>> ac63c89bba3c2ec9c2ec096d5845752a9267b16d
-map <F7> mzgg=G`z
-
-"map <F8> :w <CR> :!gcc % && ./a.out <CR>
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
-
-" TeX settings
-command! -nargs=1 Silent
-\   execute 'silent !' . <q-args>
-\ | execute 'redraw!'
-
-let g:tex_flavor = 'latex'
-map <F1> :so ~/.vimrc <CR>
-
-let g:vimtex_compiler_latexmk = {
-			\ 'build_dir' : '',
-		\ 'callback' : 1,
-			\ 'continuous' : 1,
-			\ 'executable' : 'latexmk',
-			\ 'hooks' : [],
-			\ 'options' : [
-			\   '-verbose',
-			\   '-file-line-error',
-			\   '-synctex=1',
-			\   '-interaction=nonstopmode',
-			\ ],
-			\}
-let g:vimtex_quickfix_latexlog = {'default' : 0}
-let g:tex_fast = "cmMprsSvV"
-
-inoremap ;bf \textbf{}<left>
-inoremap ;la \leftarrow
-
-autocmd BufRead,BufNewFile *.tex set filetype=tex
-autocmd BufNewFile  *.tex	0r ~/.vim/templates/skeleton.tex
-
-autocmd CompleteDone * pclose
-"set completeopt-=preview
 
 " restore lineno on exiting and opening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
 
 au Filetype python
     \ setlocal autoindent |
@@ -160,7 +76,6 @@ au Filetype python
     \ setlocal softtabstop=4 |
     \ setlocal textwidth=79 |
     \ setlocal fileformat=unix 
-
 
 " Disable left, righ, up, and down keys
 nnoremap <Left> :echo "use h"<CR>
